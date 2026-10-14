@@ -1,0 +1,14 @@
+/* "light dark" lets the iframe stay transparent on both light and dark host pages. */
+:root { color-scheme: light dark; }
+html, body { margin: 0; padding: 0; background: transparent; }
+.gp-stage { background: transparent; }
+
+/* Standalone (custom domain or direct visit): center the card on a themed page. */
+html[data-standalone="1"] body { background: var(--gp-page-bg, #0b0f14); }
+html[data-standalone="1"] .gp-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+  background: var(--gp-page);
+}
